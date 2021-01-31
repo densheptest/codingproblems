@@ -1,6 +1,7 @@
 package ztmalgoanddatastr.twosums;
 
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -18,17 +19,26 @@ public class TwoSums {
     static int[] input1 = new int[]{1, 5, 2, 2, 6, 19, -92, 199, 3, 4, 5, 6, 0, 3, 1, 2};
     static int[] input2 = new int[]{1, 5, 6, 19, -92, 199, 3, 4, 5, 6, 9, -6, 9};
     static int[] input3 = new int[]{1, 1, 1, 2, 2, 2, 3, 4, 5, 6, 9, -6, 9};
+    static int[] input4 = new int[]{1};
+    static int[] input5 = new int[]{1, 1};
 
-    public static void main(String[] args) {
-        findPairs(input3, 3);
+    public static void main(String[] args) throws IOException {
+        findPairs(input5, 3);
     }
 
-    static int[] findPairs(int[] input, int sum) {
+    static int[] findPairs(int[] input, int sum) throws IOException {
         //loop and add visited values to a lookup map
 
         // when pair found, remove value from lookup, as they must to be reused
 
         //see what optimizations can be done
+
+
+        if(input.length<2) {
+            System.out.println("Input array has less then 2 items");
+
+            throw new IOException();
+        }
 
         List<Integer> results = new ArrayList<>();
 
